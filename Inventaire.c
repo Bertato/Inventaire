@@ -72,6 +72,28 @@ int main(){
 
 	}
 	printf ("\n");
+	
+	
+	char objAjoute;
+	int objAjoutePrix;
+	
+	
+	
+	printf ("Que voulez vous ajouter dans l'inventaire du marchant ?\n");
+	scanf("%s",&objAjoute);
+	printf ("Quel prix vaut-il ?\n");
+	scanf("%d",&objAjoutePrix);
+	
+	for (int q=0;q<10;q++){
+		objMarchantPrix [q] = objMarchantPrix [q+1];
+		objMarchantPrix [q] = objAjoutePrix;
+	}
+	
+	for (int r=0; r<10;r++){
+		printf ("%d\n",objMarchant[r]);
+
+	}
+	
     return 0;
 }
 
