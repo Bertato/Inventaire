@@ -32,9 +32,10 @@ int main(){
 	}
 	
 	printf ("Le marchant a des objets pour vous, regardons cela\n");
+	printf ("\n");
 	
 // définir les objets du marchant 
-	int retenirMarchant [100];
+	char retenirMarchant [100];
 	int retenirMarchantPrix ;
 	
 	char objMarchant [10][100] = {"monture","pikachu","bouclier"};
@@ -45,11 +46,13 @@ int main(){
 		printf ("%s\n",objMarchant[m]);
 	}
 	
-	
+	printf ("Oh la, attendez je vais vous classer ca par ordre de prix, ce sera plus pratique\n");
+
+// trier les objets du marchant par prix
 	for (int n=0;n<10;n++){
 		for (int o=0;o<10;o++){
 		
-			if (objMarchantPrix > objMarchantPrix[o+1]){
+			if (objMarchantPrix [o] > objMarchantPrix[o+1]){
 				
 				retenirMarchantPrix = objMarchantPrix [o+1];
 				strcpy (retenirMarchant,objMarchant[o+1]);
@@ -62,12 +65,13 @@ int main(){
 			}	
 		}
 	}
-	
+
+// afficher l'inventaire du marchant après le tri
 	for (int p=0; p<10;p++){
 		printf ("%s\n",objMarchant[p]);
 
 	}
-	
+	printf ("\n");
     return 0;
 }
 
