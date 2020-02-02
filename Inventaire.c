@@ -1,32 +1,30 @@
 #include <stdio.h>
 #include <string.h>
 
-retenir = 0;
+int main(){	
 
-int main()
-{	
-	char obj1[] = "epee", obj2[] = "potion", obj3[] = "arc";
-    int trier;
-	int i = 0;
+	char retenir [100];
+
+	char obj[10][100] = {"epee", "potion", "arc"} ;
+
+	for (int l=0; l<10;l++){
+		printf ("%s\n",obj[l]);
+	}
     
-	for (i=0;i>3;i++){
+	for (int i=0;i<10;i++){
+		for (int j=0;j<10;j++){
 		
-		
-		trier = strcmp(obj1, obj2);
-		printf("strcmp(obj1, obj2) = %d\n", trier);
-		
-		if (strcmp(obj1, obj2) == 1){
-			// strcpy permet de copier une chaine de caractere 
-			// retenir la premiere la copier dans l'autre et refaire le retenu dans le premier
-		
-	   
-		trier = strcmp(obj1, obj3);
-		printf("strcmp(obj1, obj3) = %d\n", trier);
+			if ( strcmp ( obj[j], obj[j+1])> 0){
+				strcpy (retenir,obj[j+1]);
+				strcpy (obj[j+1],obj[j]);
+				strcpy (obj[j], retenir);
+			}	
+		}
+	}
 
-		
-		trier = strcmp(obj2, obj3);
-		printf("strcmp(obj2, obj3) = %d\n", trier);
 	
+	for (int k=0; k<10;k++){
+		printf ("%s\n",obj[k]);
 	}
 	
 	
